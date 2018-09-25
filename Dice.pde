@@ -1,29 +1,38 @@
 void setup()
 {
+  size(500, 500);
 	noLoop();
 }
+
 void draw()
 {
-	//your code here
+	background(#477148);
+  Die dieOne = new Die(25, 25);
+  dieOne.show();
 }
+
 void mousePressed()
 {
 	redraw();
 }
+
 class Die //models one single dice cube
 {
-	//variable declarations here
+	int myX, myY, numDots;
 	
 	Die(int x, int y) //constructor
 	{
-		//variable initializations here
+		myX = x;
+    myY = y;
 	}
-	void roll()
+	
+  void roll()
 	{
-		//your code here
+	  int numDots = (int)(Math.random() * 6 + 1);
 	}
-	void show()
+	
+  void show()
 	{
-		//your code here
+		rect(myX, myY, 50, 50);
 	}
 }
