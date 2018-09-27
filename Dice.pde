@@ -1,3 +1,5 @@
+int totalDots = 0;
+
 void setup()
 {
   size(500, 500);
@@ -23,7 +25,7 @@ void mousePressed()
 
 class Die //models one single dice cube
 {
-	int myX, myY, numDots, totalDots = 0;
+	int myX, myY, numDots;
 	
 	Die(int x, int y) //constructor
 	{
@@ -32,19 +34,21 @@ class Die //models one single dice cube
 	}
 	
   int roll(){
-	  return numDots = (int)(Math.random() * 6 + 1);
-    
-	}
+    numDots = (int)(Math.random() * 6 + 1);
+    totalDots += numDots;
+    return numDots;
+    }
 	
   void show(){
     fill(255);
     rect(myX, myY, 50, 50);
     
     int numDots = roll();
-    int totalDots = 0;
-    totalDots += numDots;
     
+    fill(255);
+    rect(240, 440, 50, 50);
     fill(0);
+    text(totalDots, 250, 450);
     
     if(numDots == 1){
         ellipse(myX + 25, myY + 25, 10, 10);
