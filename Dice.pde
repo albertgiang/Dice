@@ -49,10 +49,11 @@ class Die //models one single dice cube
     int numDots = roll();
     
     fill(255);
-    rect(225, 425, 50, 50);
+    rect(125, 425, 250, 50);
     fill(0);
-    text(dotsSum, 250, 450);
-    text(totalDots, 250, 470);
+    textAlign(CENTER);
+    text("Sum of Dice Above: " + dotsSum, 250, 445);
+    text("Sum of All Dice: " + totalDots, 250, 465);
     
     if(numDots == 1){
         ellipse(myX + 25, myY + 25, 10, 10);
